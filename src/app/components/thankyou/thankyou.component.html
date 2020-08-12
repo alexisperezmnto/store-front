@@ -1,0 +1,45 @@
+<div class="container">
+  <section class="bg0 p-t-75 p-b-85 mt-2">
+    <div class="jumbotron text-center my-5">
+      <h1>Thank You!</h1>
+      <br>
+      <p><strong>Please check your email</strong> for order confirmation.</p>
+      <br>
+      <p>Order Id : <strong>{{orderId}}</strong></p>
+    </div>
+    <table class="table">
+      <thead>
+      <tr>
+        <th>Image</th>
+        <th>Title</th>
+        <th>Price</th>
+        <th>Quantity</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let p of products">
+        <td>
+          <img [src]="p.image" alt="{{p.name}}" class="img-thumbnail" width="100px">
+        </td>
+        <td>{{p.name}}</td>
+        <td>{{p.price | currency:'USD'}}</td>
+        <td>{{p.numInCart}}</td>
+      </tr>
+
+      <tr class="border-0">
+        <td style="border: none;"></td>
+        <td></td>
+        <td>TOTAL</td>
+        <td>{{cartTotal | currency:'USD'}}</td>
+
+      </tr>
+      </tbody>
+    </table>
+
+    <div class="text-center">
+      <button class="btn btn-primary btn-lg mt-3" routerLink="/">GO TO SHOP</button>
+    </div>
+  </section>
+</div>
+
+
